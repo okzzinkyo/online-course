@@ -1,0 +1,42 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: "jdbc:h2:mem:library;MODE=MYSQL;NON_KEYWORDS=USER"
+    username: "sa"
+    password: ""
+    driver-cass-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+      properties:
+        hibernate:
+          show_sql: true
+          format_sql: true
+          dialect: org.hibernate.dialect.H2Dialect
+  # h2를 사용하기 위해서 설정해줘야하는 옵션
+  h2:
+    console:
+      enabled: true # h2 콘솔에 접근 가능하다
+      path: /h2-console
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev # 아래에 있는 옵션을 해당 profile에서만 실행되도록 한다.
+  datasource:
+    url: "jdbc:mysql://localhost/library"
+    username : "root"
+    password : "1111"
+    driver-class-name : com.mysql.cj.jdbc.Driver
+    # driver-class-name - 데이터베이스에 접근할 때 사용할 프로그램
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
