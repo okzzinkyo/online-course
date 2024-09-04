@@ -9,12 +9,15 @@ import com.group.libraryapp.domain.user.loanHistory.UserLoanHistoryRepository;
 import com.group.libraryapp.dto.book.request.BookCreateRequest;
 import com.group.libraryapp.dto.book.request.BookLoanRequest;
 import com.group.libraryapp.dto.book.request.BookReturnRequest;
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 
 
 @Service
+@RequiredArgsConstructor
+// @NoArgsConstructor 달리 현재 클래스에 반드시 필요한 생성자를 자동으로 생기게 한다.
 public class BookService {
 
     // 스프링 컨테이너에서 어떤 repository를 사용할지 결정하는 방식으로 유지보수 비용을 낮춤
@@ -23,14 +26,15 @@ public class BookService {
     private final UserLoanHistoryRepository userLoanHistoryRepository;
     private final UserRepository userRepository;
 
-    public BookService(
-            BookRepository bookRepository,
-            UserLoanHistoryRepository userLoanHistoryRepository,
-            UserRepository userRepository) {
-        this.bookRepository = bookRepository;
-        this.userLoanHistoryRepository = userLoanHistoryRepository;
-        this.userRepository = userRepository;
-    }
+    // lombok의 @RequiredArgsConstructor 어노테이션 사용으로 인한 주석
+//    public BookService(
+//            BookRepository bookRepository,
+//            UserLoanHistoryRepository userLoanHistoryRepository,
+//            UserRepository userRepository) {
+//        this.bookRepository = bookRepository;
+//        this.userLoanHistoryRepository = userLoanHistoryRepository;
+//        this.userRepository = userRepository;
+//    }
 
     @Transactional
     public void saveBook(BookCreateRequest request){

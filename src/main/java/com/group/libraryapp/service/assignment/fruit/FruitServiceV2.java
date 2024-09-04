@@ -4,15 +4,8 @@ import com.group.libraryapp.domain.assignment.Fruit;
 import com.group.libraryapp.domain.assignment.FruitRepository;
 import com.group.libraryapp.dto.assignment.request.FruitCreateRequest;
 import com.group.libraryapp.dto.assignment.request.FruitUpdateRequest;
-import com.group.libraryapp.dto.assignment.response.FruitResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 @Service
 public class FruitServiceV2 {

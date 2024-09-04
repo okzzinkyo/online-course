@@ -1,6 +1,6 @@
 package com.group.libraryapp.domain.assignment;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity

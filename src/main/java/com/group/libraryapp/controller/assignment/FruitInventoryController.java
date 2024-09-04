@@ -1,13 +1,9 @@
 package com.group.libraryapp.controller.assignment;
 
-import com.group.libraryapp.domain.assignment.Fruit;
 import com.group.libraryapp.dto.assignment.request.FruitCreateRequest;
 import com.group.libraryapp.dto.assignment.request.FruitUpdateRequest;
-import com.group.libraryapp.dto.assignment.response.FruitResponse;
 import com.group.libraryapp.service.assignment.fruit.FruitServiceV2;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 public class FruitInventoryController {

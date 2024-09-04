@@ -1,12 +1,17 @@
 package com.group.libraryapp.domain.user;
 
 import com.group.libraryapp.domain.user.loanHistory.UserLoanHistory;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+// 기본 생성자를 만들어 준다.
+// user의 기본 생성자 권한을 access 옵션으로 부여 가능
 public class User {
 
     @Id
@@ -23,7 +28,8 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UserLoanHistory> userLoanHistories = new ArrayList<>();
 
-    protected User() {} // JPA를 사용하기 위해 기본 생성자 추가
+    // lombok 사용으로 기본 생성자를 @NoArgsConstructor annotation으로 추가 가능
+    // protected User() {} // JPA를 사용하기 위해 기본 생성자 추가
 
     public User(String name, Integer age) {
         if(name == null || name.isBlank()) {
