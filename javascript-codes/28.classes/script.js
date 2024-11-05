@@ -27,3 +27,35 @@ console.log('john: ', john);
 
 const multipleNumbers = Person.multipleNumbers(1, 2);
 console.log('multipleNumbers: ', multipleNumbers);
+
+// Sub Class
+class Person2 {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+
+  introduce() {
+    return `Hello my name is ${this.name}`;
+  }
+}
+
+class Client extends Person {
+  constructor(name, email, phone, address) {
+    super(name, email)
+
+    this.phone = phone;
+    this.address = address;
+  }
+}
+
+const ock = new Client('ock', 'ock@example.com', '010-0000-0000', '서울');
+console.log('ock: ', ock);
+
+ock.introduce();
+console.log(ock.introduce());
+
+// NOTE: Person Class에 존재하는 introduce() 메서드 실행 순서
+// 1. Client 객체에 inroduce가 있는지 확인
+// 2. Client.prototype에 있는지 확인
+// 3. extends를 통해 관계가 만들어진 Client.prototype의 프로토타입인 Person.prototype에 메서드가 있는지 확인 후 실행
