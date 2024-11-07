@@ -79,7 +79,26 @@ function createCell(cell) {
     cellEl.classList.add('header');
   }
 
+  cellEl.onclick = () => handleCellClick(cell);
   return cellEl;
+}
+
+function handleCellClick(cell) {
+  const columnHeader = spreadsheet[0][cell.column];
+  const rowHeader = spreadsheet[cell.row][0];
+  const columnHeaderEl = getElFromRowCol(columnHeader.row, columnHeader.column);
+  const rowHeaderEl = getElFromRowCol(rowHeader.row, rowHeader.column);
+
+  clearHeaderActiveState(); // active 초기화
+  columnHeaderEl.classList.add('active');
+  rowHeaderEl.classList.add('active');
+}
+
+function clearHeaderActiveState() {
+  const activedHeaders = document.querySelectorAll('.active');
+  activedHeaders.forEach((header) => {
+    header.classList.remove('active');
+  });
 }
 
 function getElFromRowCol(row, col) {
