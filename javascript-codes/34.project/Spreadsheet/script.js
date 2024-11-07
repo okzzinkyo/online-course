@@ -19,7 +19,6 @@ class Cell {
 }
 
 initSpreadsheet();
-drawSheet();
 
 function initSpreadsheet() {
   for (let i = 0; i < ROWS; i++) {
@@ -64,7 +63,8 @@ function initSpreadsheet() {
     }
     spreadsheet.push(spreadsheetRow);
   }
-
+  
+  drawSheet();
   console.log('spreadsheet: ', spreadsheet);
 }
 
