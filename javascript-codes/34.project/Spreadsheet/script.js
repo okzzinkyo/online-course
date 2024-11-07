@@ -1,4 +1,5 @@
 const spreadsheetContainer = document.getElementById('spreadsheet-container');
+const exportBtn = document.getElementById('export-btn');
 const ROWS = 10;
 const COLS = 10;
 const spreadsheet = [];
@@ -16,6 +17,30 @@ class Cell {
     this.columnName = columnName;
     this.active = active;
   }
+}
+
+exportBtn.onclick = () => {
+  // console.log('spreadsheet: ', spreadsheet);
+  let csv = '';
+  for (let i = 0; i < spreadsheet.length; i++) {
+    if (i == 0) continue;
+
+    csv +=
+      spreadsheet[i]
+        .filter((item) => !item.isHeader)
+        .map((item) => item.data)
+        .join(',') + '\r\n';
+  }
+  // console.log('csv: ', csv);
+
+  const csvObj = new Blob(['\ufeff' + csv]); // ['\ufeff' + csv] : 인코딩 방식을 명시해서 한글 깨짐을 방지한다
+  const csvUrl = URL.createObjectURL(csvObj);
+  console.log('csvUrl: ', csvUrl);
+
+  const a = document.createElement('a');
+  a.href = csvUrl;
+  a.download = 'Spreadsheet File Name.csv';
+  a.click();
 }
 
 initSpreadsheet();
@@ -65,7 +90,7 @@ function initSpreadsheet() {
   }
   
   drawSheet();
-  console.log('spreadsheet: ', spreadsheet);
+  // console.log('spreadsheet: ', spreadsheet);
 }
 
 function createCell(cell) {
@@ -80,7 +105,14 @@ function createCell(cell) {
   }
 
   cellEl.onclick = () => handleCellClick(cell);
+
+  // input 변경될 때 cell data 수정
+  cellEl.onchange= (e) => {handleOnChange(e.target.value,cell)}
   return cellEl;
+}
+
+function handleOnChange(data, cell) {
+  cell.data = data;
 }
 
 function handleCellClick(cell) {
@@ -92,6 +124,8 @@ function handleCellClick(cell) {
   clearHeaderActiveState(); // active 초기화
   columnHeaderEl.classList.add('active');
   rowHeaderEl.classList.add('active');
+
+  document.querySelector('#cell-status').innerHTML = cell.columnName + cell.rowName;
 }
 
 function clearHeaderActiveState() {
