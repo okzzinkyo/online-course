@@ -32,6 +32,11 @@ export default class App extends Component {
     },
   ];
 
+  handleClick = (id) => {
+    let newTodoList = this.todoList.filter((list) => list.id !== id);
+    console.log('newTodoList: ', newTodoList);
+  }
+
   render() {
     return (
       <div className='container'>
@@ -46,7 +51,9 @@ export default class App extends Component {
             <div style={this.getStyle()} key={list.id}>
               <input type='checkbox' defaultChecked={list.completed} />
               {list.title}
-              <button style={this.btnStyle}>X</button>
+              <button style={this.btnStyle} onClick={() => this.handleClick(list.id)}>
+                X
+              </button>
             </div>
           ))}
         </div>
