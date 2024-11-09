@@ -40,8 +40,11 @@ export default class App extends Component {
             <h1>할 일 목록</h1>
           </div>
           {this.todoList.map((list) => (
+            // key 속성
+            // 1,2 뒤에 3리스트를 넣을 때는 3번째 리스트만 추가하면 된다고 인식하지만, 3리스트를 앞에 넣을 때는 1,2 모두 변경됐다고 인식하기 때문에 모든 자식 엘리먼트를 새롭게 그려버린다.
+            // 따라서 key 속성을 유니크한 값으로 부여하면 어떤 부분이 바뀌었는지 정확하게 인식할 수 있다.
             <div style={this.getStyle()} key={list.id}>
-              <input type='checkbox' defaultChecked={list.completed}/>
+              <input type='checkbox' defaultChecked={list.completed} />
               {list.title}
               <button style={this.btnStyle}>X</button>
             </div>
