@@ -40,6 +40,23 @@ export default class App extends Component {
     this.setState({ todoList: newTodoList });
   }
 
+  handleInputChange = (e) => {
+    this.setState({value: e.target.value});
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    let newTodo = {
+      id: Date.now(),
+      title: this.state.value,
+      completed: false
+    };
+
+    this.setState({todoList : [...this.state.todoList, newTodo]});
+    this.setState({value: ''});
+  }
+
   render() {
     return (
       <div className='container'>
@@ -47,6 +64,23 @@ export default class App extends Component {
           <div className='title'>
             <h1>할 일 목록</h1>
           </div>
+
+          <form style={{display : 'flex'}} onSubmit={this.handleSubmit}>
+            <input 
+              type="text" 
+              name="value"
+              style={{ flex: '10', padding: '5px' }} placeholder="해야 할 일을 입력해 주세요."
+              value={this.state.value}
+              onChange={(e)=>this.handleInputChange(e)}
+            />
+            <input 
+              type="submit"
+              value="입력"
+              className="btn"
+              style={{flex: 1}}
+            />
+          </form>
+
           {this.state.todoList.map((list) => (
             // key 속성
             // 1,2 뒤에 3리스트를 넣을 때는 3번째 리스트만 추가하면 된다고 인식하지만, 3리스트를 앞에 넣을 때는 1,2 모두 변경됐다고 인식하기 때문에 모든 자식 엘리먼트를 새롭게 그려버린다.
