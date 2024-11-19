@@ -3,18 +3,7 @@ import "./App.css";
 
 export default class App extends Component {
   state = {
-    todoList: [
-      {
-        id: '1',
-        title: '공부하기',
-        completed: true,
-      },
-      {
-        id: '2',
-        title: '청소하기',
-        completed: false,
-      },
-    ],
+    todoList: [],
     value: '',
   };
 
@@ -64,8 +53,7 @@ export default class App extends Component {
       completed: false
     };
 
-    this.setState({ todoList: [...this.state.todoList, newTodo] });
-    this.setState({ value: '' });
+    this.setState({ todoList: [...this.state.todoList, newTodo], value: '' });
   };
 
   render() {
