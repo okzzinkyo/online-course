@@ -17,6 +17,7 @@ const List = React.memo(({ id, title, completed, todoList, setTodoList, provided
     });
 
     setTodoList(newTodoList);
+    localStorage.setItem('todoList', JSON.stringify(newTodoList));
   };
 
   const handleSubmit = (e) => {
@@ -30,6 +31,7 @@ const List = React.memo(({ id, title, completed, todoList, setTodoList, provided
     });
 
     setTodoList(newTodoList);
+    localStorage.setItem('todoList', JSON.stringify(newTodoList));
     setIsEditing(false);
   };
 

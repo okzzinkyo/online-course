@@ -3,11 +3,13 @@ import './App.css';
 import Lists from './components/Lists';
 import Form from './components/Form';
 
+const initialTodoList = localStorage.getItem('todoList') ? JSON.parse(localStorage.getItem('todoList')) : [];
+
 export default function App() {
-  console.log('App component');
+  // console.log('App component');
 
   // react hooks을 사용한 상태 관리
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(initialTodoList);
   const [value, setValue] = useState('');
   // state = {
   //   todoList: [],
@@ -19,6 +21,7 @@ export default function App() {
     (id) => {
       let newTodoList = todoList.filter((list) => list.id !== id);
       setTodoList(newTodoList);
+      localStorage.setItem('todoList', JSON.stringify(newTodoList));
 
       // 함수형 컴포넌트에서는 this.state, this.setState로 데이터를 관리하지 않는다.
       // let newTodoList = this.state.todoList.filter((list) => list.id !== id);
@@ -41,11 +44,13 @@ export default function App() {
     };
 
     setTodoList((prev) => [...prev, newTodo]);
+    localStorage.setItem('todoList', JSON.stringify([...todoList, newTodo]));
     setValue('');
   };
 
   const handleRemoveClick = () => {
     setTodoList([]);
+    localStorage.setItem('todoList', JSON.stringify([]));
   };
 
   // 함수형 컴포넌트에서는 render 없이 return 가능
