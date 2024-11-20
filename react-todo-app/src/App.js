@@ -1,11 +1,11 @@
-import React, {useState}  from "react";
-import "./App.css";
-import Lists from "./components/Lists";
-import Form from "./components/Form";
+import React, { useCallback, useState } from 'react';
+import './App.css';
+import Lists from './components/Lists';
+import Form from './components/Form';
 
 export default function App() {
-  // console.log('App component');
-  
+  console.log('App component');
+
   // react hooks을 사용한 상태 관리
   const [todoList, setTodoList] = useState([]);
   const [value, setValue] = useState('');
@@ -13,6 +13,19 @@ export default function App() {
   //   todoList: [],
   //   value: '',
   // };
+
+  // useCallback 함수 최적화
+  const handleClick = useCallback(
+    (id) => {
+      let newTodoList = todoList.filter((list) => list.id !== id);
+      setTodoList(newTodoList);
+
+      // 함수형 컴포넌트에서는 this.state, this.setState로 데이터를 관리하지 않는다.
+      // let newTodoList = this.state.todoList.filter((list) => list.id !== id);
+      // this.setState({ todoList: newTodoList });
+    },
+    [todoList]
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,17 +42,17 @@ export default function App() {
 
     setTodoList((prev) => [...prev, newTodo]);
     setValue('');
-  };  
+  };
 
   // 함수형 컴포넌트에서는 render 없이 return 가능
   return (
-    <div className="flex items-center justify-center w-screen h-screen bg-blue-100">
-      <div className="w-full p-6 m-4 bg-white rounded shadow md:w-3/4 md:max-w-lg lg:w-3/4 lg:max-w-lg">
-        <div className="flex justify-between mb-3">
+    <div className='flex items-center justify-center w-screen h-screen bg-blue-100'>
+      <div className='w-full p-6 m-4 bg-white rounded shadow md:w-3/4 md:max-w-lg lg:w-3/4 lg:max-w-lg'>
+        <div className='flex justify-between mb-3'>
           <h1>할 일 목록</h1>
         </div>
-        <Form value={value} setValue={setValue} handleSubmit={handleSubmit}/>
-        <Lists todoList={todoList} setTodoList={setTodoList}/>
+        <Form value={value} setValue={setValue} handleSubmit={handleSubmit} />
+        <Lists handleClick={handleClick} todoList={todoList} setTodoList={setTodoList} />
       </div>
     </div>
   );

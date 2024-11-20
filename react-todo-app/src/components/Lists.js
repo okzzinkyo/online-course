@@ -3,9 +3,9 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import List from './List';
 
 // React.memo를 적용하기 위해 arrow function으로 변경
-const Lists = React.memo(({ todoList, setTodoList }) => {
+const Lists = React.memo(({ todoList, setTodoList, handleClick }) => {
   // console.log('Lists component');
-  
+
   const handleEnd = (result) => {
     // console.log(result);
     // result 매개변수에는 source 항목 및 대상 위치와 같은 드래그 이벤트에 대한 정보가 포함된다.
@@ -26,7 +26,7 @@ const Lists = React.memo(({ todoList, setTodoList }) => {
     setTodoList(newTodoList);
   };
   return (
-        <div>
+    <div>
       <DragDropContext onDragEnd={handleEnd}>
         <Droppable droppableId='todo'>
           {(provided) => (
@@ -46,6 +46,7 @@ const Lists = React.memo(({ todoList, setTodoList }) => {
                       setTodoList={setTodoList}
                       provided={provided}
                       snapshot={snapshot}
+                      handleClick={handleClick}
                     ></List>
                   )}
                 </Draggable>
