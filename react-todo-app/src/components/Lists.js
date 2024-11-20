@@ -2,9 +2,12 @@ import React from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import List from './List';
 
-export default function Lists({ todoList, setTodoList }) {
+// React.memo를 적용하기 위해 arrow function으로 변경
+const Lists = React.memo(({ todoList, setTodoList }) => {
+  // console.log('Lists component');
+  
   const handleEnd = (result) => {
-    console.log(result);
+    // console.log(result);
     // result 매개변수에는 source 항목 및 대상 위치와 같은 드래그 이벤트에 대한 정보가 포함된다.
     // 목적지가 없으면(이벤트 취소) 이 함수를 종료한다.
     if (!result.destination) return;
@@ -22,9 +25,8 @@ export default function Lists({ todoList, setTodoList }) {
     newTodoList.splice(result.destination.index, 0, reorderedItem);
     setTodoList(newTodoList);
   };
-
   return (
-    <div>
+        <div>
       <DragDropContext onDragEnd={handleEnd}>
         <Droppable droppableId='todo'>
           {(provided) => (
@@ -55,4 +57,6 @@ export default function Lists({ todoList, setTodoList }) {
       </DragDropContext>
     </div>
   );
-}
+});
+
+export default Lists;

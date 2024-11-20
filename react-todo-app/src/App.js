@@ -3,7 +3,9 @@ import "./App.css";
 import Lists from "./components/Lists";
 import Form from "./components/Form";
 
-export default function App () {
+export default function App() {
+  // console.log('App component');
+  
   // react hooks을 사용한 상태 관리
   const [todoList, setTodoList] = useState([]);
   const [value, setValue] = useState('');

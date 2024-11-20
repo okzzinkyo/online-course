@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default function List({
+// React.memo를 적용하기 위해 arrow function으로 변경
+
+const List = React.memo(({
   id,
   title,
   completed,
@@ -8,8 +10,9 @@ export default function List({
   setTodoList,
   provided,
   snapshot
-}) {
-
+}) => {
+  // console.log('List component');
+  
   const handleClick = (id) => {
     let newTodoList = todoList.filter((list) => list.id !== id);
     setTodoList(newTodoList);
@@ -36,9 +39,8 @@ export default function List({
       {...provided.draggableProps}
       ref={provided.innerRef}
       {...provided.dragHandleProps}
-      className={`${
-        snapshot.isDragging ? 'bg-gray-400' : 'bg-gray-100'
-      } flex items-center justify-between w-full px-4 py-1 my-2 text-gray-500 bg-gray-100 border rounded`}
+      className={`${snapshot.isDragging ? 'bg-gray-400' : 'bg-gray-100'
+        } flex items-center justify-between w-full px-4 py-1 my-2 text-gray-500 bg-gray-100 border rounded`}
     >
       <div className='items-center'>
         <input
@@ -57,4 +59,6 @@ export default function List({
       </div>
     </div>
   );
-}
+});
+
+export default List;
