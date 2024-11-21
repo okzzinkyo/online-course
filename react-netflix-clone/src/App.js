@@ -1,8 +1,9 @@
 import Banner from 'components/Banner';
 import './App.css';
-import Nav from './components/Nav';
+import Nav from 'components/Nav';
 import Row from 'components/Row';
 import requests from 'api/requests';
+import Footer from 'components/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Row title='TOP Rated' id='TR' fetchUrl={requests.fetchTopRated} isLargeRow></Row>
       <Row title='Action Movies' id='AM' fetchUrl={requests.fetchActionMovies} isLargeRow></Row>
       <Row title='Comedy Movies' id='CM' fetchUrl={requests.fetchComedyMovies} isLargeRow></Row>
+      <Footer></Footer>
     </div>
   );
 }
