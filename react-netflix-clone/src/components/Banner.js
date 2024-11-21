@@ -15,7 +15,7 @@ export default function Banner() {
   const fetchData = async () => {
     // 현재 상영중인 영화 정보 가져오기
     const request = await axios.get(requests.fetchNowPlaying);
-    console.log(request);
+    // console.log(request);
 
     // 여러 영화 중 하나의 ID를 가져오기
     const movieId = request.data.results[Math.floor(Math.random() * request.data.results.length)].id;
@@ -44,9 +44,11 @@ export default function Banner() {
         <div className='banner__contents'>
           <h1 className='banner__title'>{movie.title || movie.name || movie.original_name}</h1>
           <div className='banner__buttons'>
-            <button className='banner__button play' onClick={() => setIsClicked(true)}>
-              Play
-            </button>
+            {movie.videos?.results.length !== 0 && (
+              <button className='banner__button play' onClick={() => setIsClicked(true)}>
+                Play
+              </button>
+            )}
             <button className='banner__button play info'>More Information</button>
           </div>
           <h1 className='banner__description'>{truncate(movie.overview, 100)}</h1>
