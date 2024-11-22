@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/online-course/react-netflix-clone/static/css/main.89f1db94.css",
-    "main.js": "/online-course/react-netflix-clone/static/js/main.3dde3313.js",
-    "static/js/453.4d78b4ad.chunk.js": "/online-course/react-netflix-clone/static/js/453.4d78b4ad.chunk.js",
-    "index.html": "/online-course/react-netflix-clone/index.html",
-    "main.89f1db94.css.map": "/online-course/react-netflix-clone/static/css/main.89f1db94.css.map",
-    "main.3dde3313.js.map": "/online-course/react-netflix-clone/static/js/main.3dde3313.js.map",
-    "453.4d78b4ad.chunk.js.map": "/online-course/react-netflix-clone/static/js/453.4d78b4ad.chunk.js.map"
+    "main.css": "/online-course/static/css/main.89f1db94.css",
+    "main.js": "/online-course/static/js/main.e8452098.js",
+    "static/js/453.4d78b4ad.chunk.js": "/online-course/static/js/453.4d78b4ad.chunk.js",
+    "index.html": "/online-course/index.html",
+    "main.89f1db94.css.map": "/online-course/static/css/main.89f1db94.css.map",
+    "main.e8452098.js.map": "/online-course/static/js/main.e8452098.js.map",
+    "453.4d78b4ad.chunk.js.map": "/online-course/static/js/453.4d78b4ad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.89f1db94.css",
-    "static/js/main.3dde3313.js"
+    "static/js/main.e8452098.js"
   ]
 }
