@@ -1,6 +1,7 @@
-import axios from 'api/axios';
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import axios from 'api/axios';
+import { useDebounce } from 'hooks/useDebounce';
 import './SearchPage.css';
 
 function SearchPage() {
@@ -11,7 +12,7 @@ function SearchPage() {
     return new URLSearchParams(location.search);
   };
   let query = useQuery();
-  const searchTerm = query.get('q');
+  const searchTerm = useDebounce(query.get('q'), 500);
 
   useEffect(() => {
     if (searchTerm) {
