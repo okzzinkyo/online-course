@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9850de571b15dac50e679e156beebb22 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9850de571b15dac50e679e156beebb22" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9850de571b15dac50e679e156beebb22 = L.map(
+                "map_9850de571b15dac50e679e156beebb22",
+                {
+                    center: [37.63385021538461, 127.01967511538463],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a45f42bd16aaa6fbd4b8e43479cb3a0c = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a45f42bd16aaa6fbd4b8e43479cb3a0c.addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+            var marker_e7b86d47747ed74a7a753b2c45422ae4 = L.marker(
+                [37.63123983, 127.0242273],
+                {
+}
+            ).addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+        var popup_7f78d89e9b50635399a9773b774b95df = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec98ff1892e86d470a77cce40f06d8f6 = $(`<div id="html_ec98ff1892e86d470a77cce40f06d8f6" style="width: 100.0%; height: 100.0%;">기타(운전자법규위반)</div>`)[0];
+                popup_7f78d89e9b50635399a9773b774b95df.setContent(html_ec98ff1892e86d470a77cce40f06d8f6);
+            
+        
+
+        marker_e7b86d47747ed74a7a753b2c45422ae4.bindPopup(popup_7f78d89e9b50635399a9773b774b95df)
+        ;
+
+        
+    
+    
+            var marker_16a8ec333fec3b71aea3a3354eada53b = L.marker(
+                [37.62279351, 127.0195897],
+                {
+}
+            ).addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+        var popup_d6cc1c03bd063f76a4fd1e91c8bfef6f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad979963a05aee0fd420a7be237efd5b = $(`<div id="html_ad979963a05aee0fd420a7be237efd5b" style="width: 100.0%; height: 100.0%;">안전운전 의무 불이행</div>`)[0];
+                popup_d6cc1c03bd063f76a4fd1e91c8bfef6f.setContent(html_ad979963a05aee0fd420a7be237efd5b);
+            
+        
+
+        marker_16a8ec333fec3b71aea3a3354eada53b.bindPopup(popup_d6cc1c03bd063f76a4fd1e91c8bfef6f)
+        ;
+
+        
+    
+    
+            var marker_b8b9371e10fd87a7468706e8766fd831 = L.marker(
+                [37.61236625, 127.0221154],
+                {
+}
+            ).addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+        var popup_e7b366b2ce10657f92338d18b0d8fad7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b418bbdb9292018361c01a6547be19a6 = $(`<div id="html_b418bbdb9292018361c01a6547be19a6" style="width: 100.0%; height: 100.0%;">안전운전 의무 불이행</div>`)[0];
+                popup_e7b366b2ce10657f92338d18b0d8fad7.setContent(html_b418bbdb9292018361c01a6547be19a6);
+            
+        
+
+        marker_b8b9371e10fd87a7468706e8766fd831.bindPopup(popup_e7b366b2ce10657f92338d18b0d8fad7)
+        ;
+
+        
+    
+    
+            var marker_5cb484ab12d8e0b33571d4ed6733eb6b = L.marker(
+                [37.63364149, 127.0230106],
+                {
+}
+            ).addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+        var popup_00ce1cf934931e3c74d369353ff2adf1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_32eb2a60f24a3e00a7a7de2c9508a145 = $(`<div id="html_32eb2a60f24a3e00a7a7de2c9508a145" style="width: 100.0%; height: 100.0%;">보행자 보호의무 위반</div>`)[0];
+                popup_00ce1cf934931e3c74d369353ff2adf1.setContent(html_32eb2a60f24a3e00a7a7de2c9508a145);
+            
+        
+
+        marker_5cb484ab12d8e0b33571d4ed6733eb6b.bindPopup(popup_00ce1cf934931e3c74d369353ff2adf1)
+        ;
+
+        
+    
+    
+            var marker_3ef9eea59788f043bfb663e22da3f4ab = L.marker(
+                [37.63509656, 127.030731],
+                {
+}
+            ).addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+        var popup_6cb2b07bd58bcd3aef1bdb29ae2f9bd6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45e5c3119dfac1847b54e2dc491168aa = $(`<div id="html_45e5c3119dfac1847b54e2dc491168aa" style="width: 100.0%; height: 100.0%;">신호위반</div>`)[0];
+                popup_6cb2b07bd58bcd3aef1bdb29ae2f9bd6.setContent(html_45e5c3119dfac1847b54e2dc491168aa);
+            
+        
+
+        marker_3ef9eea59788f043bfb663e22da3f4ab.bindPopup(popup_6cb2b07bd58bcd3aef1bdb29ae2f9bd6)
+        ;
+
+        
+    
+    
+            var marker_212c1ec4c1114775e8aa49f420635065 = L.marker(
+                [37.61078916, 127.0334443],
+                {
+}
+            ).addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+        var popup_2db4f71a211f81556d528f28673abbe1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3f7fbafadaf9224d9b2c089b7b03172f = $(`<div id="html_3f7fbafadaf9224d9b2c089b7b03172f" style="width: 100.0%; height: 100.0%;">신호위반</div>`)[0];
+                popup_2db4f71a211f81556d528f28673abbe1.setContent(html_3f7fbafadaf9224d9b2c089b7b03172f);
+            
+        
+
+        marker_212c1ec4c1114775e8aa49f420635065.bindPopup(popup_2db4f71a211f81556d528f28673abbe1)
+        ;
+
+        
+    
+    
+            var marker_a80c4fb25e073db00219e6651115c5c8 = L.marker(
+                [37.6349671, 127.0254049],
+                {
+}
+            ).addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+        var popup_50335cdada7615423f1f4c5f513091ed = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_52863b071be4d5f6a1e6c58cad5f02dd = $(`<div id="html_52863b071be4d5f6a1e6c58cad5f02dd" style="width: 100.0%; height: 100.0%;">신호위반</div>`)[0];
+                popup_50335cdada7615423f1f4c5f513091ed.setContent(html_52863b071be4d5f6a1e6c58cad5f02dd);
+            
+        
+
+        marker_a80c4fb25e073db00219e6651115c5c8.bindPopup(popup_50335cdada7615423f1f4c5f513091ed)
+        ;
+
+        
+    
+    
+            var marker_499fd70ac971ab8c86e538281870e26c = L.marker(
+                [37.67345315, 127.0054288],
+                {
+}
+            ).addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+        var popup_d2287d8a90a93132d871fd19d79a57f0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45ab0885079dcb317922f6de0b4f99c2 = $(`<div id="html_45ab0885079dcb317922f6de0b4f99c2" style="width: 100.0%; height: 100.0%;">안전운전 의무 불이행</div>`)[0];
+                popup_d2287d8a90a93132d871fd19d79a57f0.setContent(html_45ab0885079dcb317922f6de0b4f99c2);
+            
+        
+
+        marker_499fd70ac971ab8c86e538281870e26c.bindPopup(popup_d2287d8a90a93132d871fd19d79a57f0)
+        ;
+
+        
+    
+    
+            var marker_0ddd3ec35b6ce24bd324628da3fefa4f = L.marker(
+                [37.62895786, 127.0127956],
+                {
+}
+            ).addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+        var popup_e77cdd5a37fc37d1e9e1a2f2f0ef4ed6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_410ceaf0f7fe80f2e8a03fa34ce8f73e = $(`<div id="html_410ceaf0f7fe80f2e8a03fa34ce8f73e" style="width: 100.0%; height: 100.0%;">안전운전 의무 불이행</div>`)[0];
+                popup_e77cdd5a37fc37d1e9e1a2f2f0ef4ed6.setContent(html_410ceaf0f7fe80f2e8a03fa34ce8f73e);
+            
+        
+
+        marker_0ddd3ec35b6ce24bd324628da3fefa4f.bindPopup(popup_e77cdd5a37fc37d1e9e1a2f2f0ef4ed6)
+        ;
+
+        
+    
+    
+            var marker_4f1a67e060b189b692fabd1610d1d019 = L.marker(
+                [37.63135713, 127.0242605],
+                {
+}
+            ).addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+        var popup_24bc9020ab5b8c4a759e3c092192a2d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_01bc3c6557867c77fc679143374a4bbe = $(`<div id="html_01bc3c6557867c77fc679143374a4bbe" style="width: 100.0%; height: 100.0%;">중앙선 침범</div>`)[0];
+                popup_24bc9020ab5b8c4a759e3c092192a2d6.setContent(html_01bc3c6557867c77fc679143374a4bbe);
+            
+        
+
+        marker_4f1a67e060b189b692fabd1610d1d019.bindPopup(popup_24bc9020ab5b8c4a759e3c092192a2d6)
+        ;
+
+        
+    
+    
+            var marker_384fbacf3d2b8f48914f82729887f2c8 = L.marker(
+                [37.63399943, 127.0135447],
+                {
+}
+            ).addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+        var popup_fa129fa91e1c6134e5b8e0049f6ec1de = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f7488250e748270c2cf062a59a6ded18 = $(`<div id="html_f7488250e748270c2cf062a59a6ded18" style="width: 100.0%; height: 100.0%;">보행자 보호의무 위반</div>`)[0];
+                popup_fa129fa91e1c6134e5b8e0049f6ec1de.setContent(html_f7488250e748270c2cf062a59a6ded18);
+            
+        
+
+        marker_384fbacf3d2b8f48914f82729887f2c8.bindPopup(popup_fa129fa91e1c6134e5b8e0049f6ec1de)
+        ;
+
+        
+    
+    
+            var marker_db565ac1f017e77c067881e15bfa3663 = L.marker(
+                [37.6457043, 127.0105211],
+                {
+}
+            ).addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+        var popup_baff4397597baeab30717ef9d4df92b3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1344266abce1cfe3191b12c168f29946 = $(`<div id="html_1344266abce1cfe3191b12c168f29946" style="width: 100.0%; height: 100.0%;">안전운전 의무 불이행</div>`)[0];
+                popup_baff4397597baeab30717ef9d4df92b3.setContent(html_1344266abce1cfe3191b12c168f29946);
+            
+        
+
+        marker_db565ac1f017e77c067881e15bfa3663.bindPopup(popup_baff4397597baeab30717ef9d4df92b3)
+        ;
+
+        
+    
+    
+            var marker_73f84e6876f3731dd1d5f02908fcc3b1 = L.marker(
+                [37.64568703, 127.0107026],
+                {
+}
+            ).addTo(map_9850de571b15dac50e679e156beebb22);
+        
+    
+        var popup_e622bcb96edc570e260242fa89b2fca0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3736a9b7f19fbddf6ecbb2efa41acdab = $(`<div id="html_3736a9b7f19fbddf6ecbb2efa41acdab" style="width: 100.0%; height: 100.0%;">신호위반</div>`)[0];
+                popup_e622bcb96edc570e260242fa89b2fca0.setContent(html_3736a9b7f19fbddf6ecbb2efa41acdab);
+            
+        
+
+        marker_73f84e6876f3731dd1d5f02908fcc3b1.bindPopup(popup_e622bcb96edc570e260242fa89b2fca0)
+        ;
+
+        
+    
+</script>
+</html>
